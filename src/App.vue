@@ -7,8 +7,8 @@
     <security-code class="security-code" v-model="code3" placeholder="*"></security-code>
     <security-code class="security-code" v-model="code4" theme="line" placeholder="*"></security-code>
 
-    <security-code class="security-code" v-model="code5" :number="6"></security-code>
-    <security-code class="security-code" v-model="code6" theme="line" :number="6"></security-code>
+    <security-code class="security-code" v-model="code5" :length="6"></security-code>
+    <security-code class="security-code" v-model="code6" theme="line" :length="6"></security-code>
   </div>
 </template>
 
