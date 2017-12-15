@@ -1,6 +1,6 @@
 {
   "name": "vue-security-code",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Security code input for Vue.js",
   "author": "liusong <347139089@qq.com>",
   "main": "src/components/security-code/index.vue",
