@@ -2,6 +2,9 @@
 
 > An security-code input implement by vue 2.0
 
+![](https://img.shields.io/npm/dm/vue-security-code.svg)
+![](https://img.shields.io/npm/v/vue-security-code.svg)
+
 ## Demo
 
 [Live Demo >>](https://ls1231.github.io/vue-security-code/)
@@ -43,4 +46,4 @@ theme | 主题 | string | block / line | block
 
 ## License
 
-[MIT](https://github.com/LS1231/vue-security-code/blob/master/LICENSE) Copyright (c) 2017 Liusong
+[MIT](https://github.com/LS1231/vue-security-code/blob/master/LICENSE) Copyright (c) 2017 liusong
