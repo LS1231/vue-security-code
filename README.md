@@ -1,21 +1,46 @@
 # vue-security-code
 
-> A Vue.js project
+> An security-code input implement by vue 2.0
 
-## Build Setup
+## Demo
+
+[Live Demo >>](https://ls1231.github.io/vue-security-code/)
+
+## Install
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+npm i -S vue-security-code
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Usage
+``` vue
+<template>
+    <security-code v-model="code"></security-code>
+</template>
+
+<script>
+    import SecurityCode from 'vue-security-code'
+
+    // Declare
+    export default {
+        components: { SecurityCode },
+        data () {
+          return {
+            code: ''
+          }
+        }
+    }
+</script>
+```
+
+## Options
+
+参数 | 说明 | 类型 | 可选值 | 默认值
+---- | --- | --- | --- | ---
+length | 长度 | number | — | 4
+placeholder | 占位符 | string | — | -
+theme | 主题 | string | block / line | block
+
+## License
+
+[MIT](https://github.com/LS1231/vue-security-code/blob/master/LICENSE) Copyright (c) 2017 Liusong

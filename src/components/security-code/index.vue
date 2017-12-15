@@ -1,15 +1,14 @@
-<!--四位验证码输入框组件-->
 <template>
   <div class="security-code-wrap">
     <label :for="`code-${uuid}`">
-      <ul :class="`${theme}-container`">
-        <li class="field-wrap" v-for="(item, index) in number" :key="index">
+      <ul :class="`${theme}-container security-code-container`">
+        <li class="field-wrap" v-for="(item, index) in length" :key="index">
           <i class="char-field">{{value[index] || placeholder}}</i>
         </li>
       </ul>
     </label>
     <input ref="input" class="input-code" @keyup="handleInput($event)" v-model="value"
-           :id="`code-${uuid}`" :name="`code-${uuid}`" type="tel" :maxlength="number"
+           :id="`code-${uuid}`" :name="`code-${uuid}`" type="tel" :maxlength="length"
            autocorrect="off" autocomplete="off" autocapitalize="off">
   </div>
 </template>
@@ -19,7 +18,7 @@
     name: 'SecurityCode',
     // component properties
     props: {
-      number: {
+      length: {
         type: Number,
         default: 4
       },
@@ -54,7 +53,7 @@
       },
       handleInput (e) {
         this.$refs.input.value = this.value
-        if (this.value.length >= this.number) {
+        if (this.value.length >= this.length) {
           this.hideKeyboard()
         }
         this.handleSubmit()
@@ -68,33 +67,35 @@
     overflow: hidden;
   }
 
-  .block-container {
+  .security-code-container {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
     .field-wrap {
       list-style: none;
       display: block;
-      width: 40px;
       height: 40px;
+      width: 40px;
       line-height: 40px;
       font-size: 16px;
-      background-color: #fff;
-      margin: 2px;
-      color: #000;
       .char-field {
         font-style: normal;
       }
     }
   }
 
+  .block-container {
+    justify-content: center;
+    .field-wrap {
+      background-color: #fff;
+      margin: 2px;
+      color: #000;
+    }
+  }
+
   .line-container {
-    display: flex;
     position: relative;
     background-color: #fff;
-    margin: 0;
-    padding: 0;
     &:after {
       box-sizing: border-box;
       content: "";
@@ -111,11 +112,6 @@
     .field-wrap {
       flex: 1;
       position: relative;
-      display: block;
-      height: 40px;
-      width: 40px;
-      line-height: 40px;
-      font-size: 16px;
       &:not(:last-child):after {
         content: "";
         width: 1px;
@@ -125,9 +121,6 @@
         top: 25%;
         background-color: #d9d9d9;
         transform: scaleX(.5);
-      }
-      .char-field {
-        font-style: normal;
       }
     }
   }
