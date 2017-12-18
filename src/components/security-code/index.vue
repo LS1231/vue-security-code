@@ -52,8 +52,7 @@
         this.$emit('input', this.value)
       },
       handleInput (e) {
-        this.$refs.input.value = this.value
-        if (this.value.length >= this.length) {
+        if (e.target.value.length >= this.length) {
           this.hideKeyboard()
         }
         this.handleSubmit()
@@ -64,7 +63,9 @@
 
 <style scoped lang="less">
   .security-code-wrap {
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .security-code-container {
@@ -128,12 +129,7 @@
   .input-code {
     position: absolute;
     left: -9999px;
-    top: -99999px;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    overflow: visible;
-    z-index: -1;
+    top: -9999px;
   }
 
 </style>
